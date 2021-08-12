@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${title}"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/styleForm2.css">
+    <link rel="stylesheet" href="/css/styleOthers.css">
+</head>
+<body>
+
+<header th:insert="blocks/header :: header"></header>
+
+<div class="div_popup_overlay"></div>
+
+<div th:insert="blocks/formLogin :: #loginForm"></div>
+
+<div class="container">
+    <div th:each="tour : ${tours}" class="row justify-content-center mb-5">
+            <div class="col-6">
+                <img th:src="${tour.image}"
+                     class="img img-responsive img-fluid" alt="" style="width: 100%;">
+            </div>
+            <div class="col-6">
+                <h4 th:text="'Tour: ' + ${tour.getName()}"></h4>
+                <p th:text="${'About tour: ' + tour.description}"></p>
+                <p th:text="${'Price: ' + tour.price}"></p>
+                <br>
+                <a th:href="${'photos/' + tour.getName()}" style="color: white"><h3>Reviews</h3></a>
+            </div>
+    </div>
+</div>
+
+
+<script src="https://www.gstatic.com/firebasejs/8.7.0/firebase.js"></script>
+<script src = "https://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript" src="/js/authFire.js"></script>
+<script type="text/javascript" src="/js/loginFormToggleShow.js"></script>
+
+</body>
+</html>

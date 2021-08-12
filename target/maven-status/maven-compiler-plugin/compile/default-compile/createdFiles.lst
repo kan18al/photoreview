@@ -1,0 +1,11 @@
+com\example\photoReview\controllers\MapController.class
+com\example\photoReview\models\Photo.class
+com\example\photoReview\PhotoReviewApplication.class
+com\example\photoReview\controllers\MainController.class
+com\example\photoReview\models\FirebaseRepository$2.class
+com\example\photoReview\models\Rating.class
+com\example\photoReview\FirebaseInitializer.class
+com\example\photoReview\MVCConfig.class
+com\example\photoReview\models\FirebaseRepository.class
+com\example\photoReview\models\FirebaseRepository$1.class
+com\example\photoReview\controllers\PhotoViewController.class

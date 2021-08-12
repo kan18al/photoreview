@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${title}"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/styleForm2.css">
+    <link rel="stylesheet" href="/css/styleForRating.css">
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+
+<div class="div_popup_overlay"></div>
+
+<div th:insert="blocks/formLogin :: #loginForm"></div>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="card col-4 box" th:each="photo : ${photos}" style="width: 18rem;">
+            <img class="card-img-top"  th:src="'data:image/png;base64,' + ${controller.convertTo(photo.photo)}" alt="Card image cap">
+            <div class="card-body">
+                <div class="rating">
+                    <div class="rating__body">
+                        <div class="rating__active" th:attr="rate = ${photo.getRating()}"></div>
+<!--                        <div class="rating__items">-->
+<!--                            <input type="radio" class="rating__item" value="1" th:name="${'rating_' + photo.id}">-->
+<!--                            <input type="radio" class="rating__item" value="2" th:name="${'rating_' + photo.id}">-->
+<!--                            <input type="radio" class="rating__item" value="3" th:name="${'rating_' + photo.id}">-->
+<!--                            <input type="radio" class="rating__item" value="4" th:name="${'rating_' + photo.id}">-->
+<!--                            <input type="radio" class="rating__item" value="5" th:name="${'rating_' + photo.id}">-->
+<!--                        </div>-->
+                    </div>
+                    <div class="rating__value">3.5</div>
+                </div>
+                <h5 th:text="${photo.latitude + ' ' + photo.longitude}" class="card-title"></h5>
+                <p th:text="${photo.comment}" class="card-text truncate-text"></p>
+                <a th:href="@{/image/imageDetails(id=${photo.id})}" class="btn sliding-button sb-dop">View</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/8.7.0/firebase.js"></script>
+
+<script src = "https://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript" src="/js/mapFunctions.js"></script>
+<script type="text/javascript" src="/js/loginFormToggleShow.js"></script>
+<script type="text/javascript" src="/js/authFire.js"></script>
+<script type="text/javascript" src="/js/setRatingForCard.js"></script>
+<link rel="stylesheet" href="/css/styleOthers.css">
+
+</body>
+</html>

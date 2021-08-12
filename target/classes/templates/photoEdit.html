@@ -1,0 +1,33 @@
+<html>
+<head>
+    <link rel="stylesheet" href="/css/styleFormEdit.css">
+</head>
+<body>
+<form method="POST" action="/image/imageDetails/photoEdit" class="contact_form">
+    <ul>
+        <li>
+            <h2>Review Edit</h2>
+        </li>
+        <li hidden>
+            <label for="id">Id</label>
+            <input readonly id="id" name="id" th:value="${id}"/>
+        </li>
+        <li>
+            <label for="comment">Comment:</label>
+            <textarea cols="42" rows="6" id="comment" name="comment" th:text="${comment}"></textarea>
+        </li>
+        <li>
+            <label for="latitude">Latitude:</label>
+            <input id="latitude" name="latitude" th:value="${latitude}"/>
+        </li>
+        <li>
+            <label for="longitude">Longitude:</label>
+            <input id="longitude" name="longitude" th:value="${longitude}"/>
+        </li>
+        <li>
+            <button class="submit" type="submit">Submit Form</button>
+        </li>
+    </ul>
+</form>
+</body>
+</html>

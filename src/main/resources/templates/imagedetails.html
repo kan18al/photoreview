@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Image Info</title>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/css/styleOthers.css">
+</head>
+<body>
+<br>
+<p id="loginP">Test</p>
+<div class="container">
+	<h3 class="tittle-w3l text-center mb-lg-5 mb-sm-4 mb-3">
+		<span>I</span>mage
+		<span>D</span>etails</h3><br>
+	<div class="row">
+		<div class="col-3">
+			<img th:src="'data:image/png;base64,' + ${controller.convertTo(photoImage)}"
+				 class="img img-responsive img-fluid" alt="" style="width: 100%">
+		</div>
+		<div class="col-5">
+			<div id="map" th:attr="data-latitude=${latitude}, data-longitude=${longitude}"
+				 style="height: 350px"></div>
+		</div>
+		<div class="col-4">
+			Coordinates: <span th:text="${latitude + ' ' + longitude}" class="mb-3"></span>
+			<p class="mb-3">
+				Date : <span class="item_price" th:text="${date}"></span>
+			</p>
+			<p th:text="'Tour: ' + ${tour}"></p>
+			<div class="product-single-w3l">
+				Comment: <span th:text="${comment}" class="my-sm-4 my-3">
+									</span>
+			</div><br>
+			<a class="linkTo" href="/photos">Go Back</a>
+			&emsp;<a class="linkTo" href="/">Go Home</a>
+			&emsp;<a class="linkTo" id="btnEdit" th:href="@{/image/imageDetails/photoEdit(id=${id})}">Edit</a>
+		</div>
+	</div>
+</div>
+
+<!--	<script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-app.js"></script>-->
+<!--	<script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-analytics.js"></script>-->
+<!--	<script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-auth.js"></script>-->
+<!--	<script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-firestore.js"></script>-->
+
+	<script src="https://www.gstatic.com/firebasejs/8.7.0/firebase.js"></script>
+
+	<script src = "https://code.jquery.com/jquery-latest.js"></script>
+	<script type="text/javascript" src="/js/mapFunctions.js"></script>
+	<script type="text/javascript" src="/js/authFire.js"></script>
+	<script type="text/javascript" src="/js/scriptForBtnEdit.js"></script>
+
+	<script async
+			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAAhNOwyc-_urbBMkprjKzL0ysIObulFRQ&callback=initMap">
+	</script>
+
+</body>
+</html>

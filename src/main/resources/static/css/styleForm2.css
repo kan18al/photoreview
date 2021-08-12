@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Otomanopee+One&display=swap');
+
+.form-4 {
+    /* Size and position */
+    width: 300px;
+    margin: 60px auto 30px;
+    padding: 10px;
+    position: relative;
+
+    /* Font styles */
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    color: white;
+    font-family: 'Otomanopee One', sans-serif;
+}
+.form-4 h1 {
+    font-family: 'Otomanopee One', sans-serif;
+    font-size: 22px;
+    padding-bottom: 20px;
+    color: white;
+}
+.form-4 input[type=text],
+.form-4 input[type=password] {
+    /* Size and position */
+    width: 100%;
+    padding: 8px 4px 8px 10px;
+    margin-bottom: 15px;
+
+    /* Styles */
+    border: 1px solid #4e3043; /* Fallback */
+    border: 1px solid rgba(78,48,67, 0.8);
+    border-radius: 2px;
+    box-shadow:
+            0 1px 0 rgba(255,255,255,0.2),
+            inset 0 1px 1px rgba(0,0,0,0.1);
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+
+    /* Font styles */
+    font-family: 'Otomanopee One', sans-serif;
+    color: rgba(37,21,26,1);
+    font-size: 13px;
+}
+.form-4 input::-webkit-input-placeholder {
+    color: rgba(37,21,26,0.5);
+    text-shadow: 0 1px 0 rgba(255,255,255,0.15);
+}
+.form-4 input:-moz-placeholder {
+    color: rgba(37,21,26,0.5);
+    text-shadow: 0 1px 0 rgba(255,255,255,0.15);
+}
+
+.form-4 input:-ms-input-placeholder {
+    color: rgba(37,21,26,0.5);
+    text-shadow: 0 1px 0 rgba(255,255,255,0.15);
+}
+
+/* Fallback */
+.no-boxshadow .form-4 input[type=text]:focus,
+.no-boxshadow .form-4 input[type=password]:focus {
+    outline: 1px solid white;
+}
+.form-4 input[type=submit] {
+    width: 100%;
+    padding: 8px 5px;
+    text-decoration: none;
+    color: #0f3443;
+    display: inline-block;
+    position: relative;
+    border: 1px solid;
+    border-image: linear-gradient(90deg, #34e89e, #0f3443);
+    border-image-slice: 1;
+    text-transform: uppercase;
+    overflow: hidden;
+    letter-spacing: 2px;
+    cursor: pointer;
+    text-shadow: 0 1px 0 rgba(0,0,0,0.3);
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Otomanopee One', sans-serif;
+    background: linear-gradient(90deg, #0f3443, #34e89e);
+    transition: .8s cubic-bezier(.165, .84, .44, 1);
+}
+.form-4 input[type=submit]:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 0;
+    z-index: -1;
+    color: white;
+    background: linear-gradient(90deg, #34e89e, #0f3443);
+    transition: .8s cubic-bezier(.165, .84, .44, 1);
+}
+.form-4 input[type=submit]:hover {
+    background: linear-gradient(90deg, #34e89e, #0f3443);
+}
+.form-4 input[type=submit]:hover:before {
+    left: 0%;
+    right: auto;
+    width: 100%;
+}
+
+.form-4 label {
+    display: none;
+    padding: 0 0 5px 2px;
+    cursor: pointer;
+}
+
+.form-4 label:hover ~ input {
+    border-color: #333;
+}
+
+.no-placeholder .form-4 label {
+    display: block;
+}
+.hide {
+    display: none;
+}
+
+#loginForm {
+    z-index: 31;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -90%);
+}
+
+.div_popup_overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    opacity: .1;
+    z-index: 30;
+}
